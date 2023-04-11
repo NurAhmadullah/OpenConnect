@@ -16,6 +16,8 @@
 		0BBD169529E0400600E11563 /* OpenConnectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD169429E0400600E11563 /* OpenConnectTests.swift */; };
 		0BBD169F29E0400600E11563 /* OpenConnectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD169E29E0400600E11563 /* OpenConnectUITests.swift */; };
 		0BBD16A129E0400600E11563 /* OpenConnectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */; };
+		895EE22429E5100E00C366FB /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22329E5100E00C366FB /* ContactListViewModel.swift */; };
+		895EE22729E510A400C366FB /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22629E510A400C366FB /* ContactViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		0BBD169A29E0400600E11563 /* OpenConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenConnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBD169E29E0400600E11563 /* OpenConnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenConnectUITests.swift; sourceTree = "<group>"; };
 		0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenConnectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		895EE22329E5100E00C366FB /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		895EE22629E510A400C366FB /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 		0BBD167D29E0400500E11563 /* OpenConnect */ = {
 			isa = PBXGroup;
 			children = (
+				895EE22529E5105500C366FB /* Views */,
+				895EE22229E50FF100C366FB /* Models */,
+				895EE22129E50FE500C366FB /* ViewModels */,
 				0BBD167E29E0400500E11563 /* OpenConnectApp.swift */,
-				0BBD168029E0400500E11563 /* ContentView.swift */,
 				0BBD168229E0400600E11563 /* Assets.xcassets */,
 				0BBD168729E0400600E11563 /* Persistence.swift */,
 				0BBD168929E0400600E11563 /* OpenConnect.xcdatamodeld */,
@@ -131,6 +137,30 @@
 				0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */,
 			);
 			path = OpenConnectUITests;
+			sourceTree = "<group>";
+		};
+		895EE22129E50FE500C366FB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				895EE22329E5100E00C366FB /* ContactListViewModel.swift */,
+				895EE22629E510A400C366FB /* ContactViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		895EE22229E50FF100C366FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		895EE22529E5105500C366FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BBD168029E0400500E11563 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BBD168B29E0400600E11563 /* OpenConnect.xcdatamodeld in Sources */,
+				895EE22729E510A400C366FB /* ContactViewModel.swift in Sources */,
 				0BBD168829E0400600E11563 /* Persistence.swift in Sources */,
 				0BBD168129E0400500E11563 /* ContentView.swift in Sources */,
+				895EE22429E5100E00C366FB /* ContactListViewModel.swift in Sources */,
 				0BBD167F29E0400500E11563 /* OpenConnectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
