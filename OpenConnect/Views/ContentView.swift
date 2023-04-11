@@ -8,40 +8,35 @@
 import SwiftUI
 import CoreData
 
+var contacts = [
+    Contact(name: "Sohag", description: "iOS developer", phone: "0123456789"),
+    Contact(name: "Zahid", description: "iOS developer", phone: "0123456789"),
+    Contact(name: "Dev3", description: "android developer", phone: "0123456789"),
+    Contact(name: "Dev4", description: "PHP developer", phone: "0123456789"),
+    Contact(name: "Dev5", description: "java developer", phone: "0123456789"),
+]
+
 struct ContentView: View {
+    /*
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    */
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            List(contacts,id:\.name){ contact in
+                NavigationLink(destination: ContactDetailView(contact: contact)){
+                    ContactView(contact: contact)
                 }
             }
-            Text("Select an item")
+            .navigationBarTitle(Text("Contacts"))
         }
     }
 
+    /*
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -68,6 +63,7 @@ struct ContentView: View {
             }
         }
     }
+    */
 }
 
 private let itemFormatter: DateFormatter = {

@@ -18,6 +18,11 @@
 		0BBD16A129E0400600E11563 /* OpenConnectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */; };
 		895EE22429E5100E00C366FB /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22329E5100E00C366FB /* ContactListViewModel.swift */; };
 		895EE22729E510A400C366FB /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22629E510A400C366FB /* ContactViewModel.swift */; };
+		895EE22929E5177A00C366FB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22829E5177A00C366FB /* Contact.swift */; };
+		895EE22C29E517FF00C366FB /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22B29E517FF00C366FB /* Globals.swift */; };
+		895EE22E29E5197800C366FB /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22D29E5197800C366FB /* ContactView.swift */; };
+		895EE23029E51EB200C366FB /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22F29E51EB200C366FB /* ContactDetailView.swift */; };
+		895EE23229E542A600C366FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE23129E542A600C366FB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,11 @@
 		0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenConnectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		895EE22329E5100E00C366FB /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		895EE22629E510A400C366FB /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		895EE22829E5177A00C366FB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		895EE22B29E517FF00C366FB /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		895EE22D29E5197800C366FB /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		895EE22F29E51EB200C366FB /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		895EE23129E542A600C366FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 				895EE22529E5105500C366FB /* Views */,
 				895EE22229E50FF100C366FB /* Models */,
 				895EE22129E50FE500C366FB /* ViewModels */,
+				895EE22A29E517DF00C366FB /* Globals */,
 				0BBD167E29E0400500E11563 /* OpenConnectApp.swift */,
 				0BBD168229E0400600E11563 /* Assets.xcassets */,
 				0BBD168729E0400600E11563 /* Persistence.swift */,
@@ -151,6 +162,7 @@
 		895EE22229E50FF100C366FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				895EE22829E5177A00C366FB /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,8 +171,19 @@
 			isa = PBXGroup;
 			children = (
 				0BBD168029E0400500E11563 /* ContentView.swift */,
+				895EE22D29E5197800C366FB /* ContactView.swift */,
+				895EE22F29E51EB200C366FB /* ContactDetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		895EE22A29E517DF00C366FB /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				895EE22B29E517FF00C366FB /* Globals.swift */,
+				895EE23129E542A600C366FB /* Constants.swift */,
+			);
+			path = Globals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895EE22C29E517FF00C366FB /* Globals.swift in Sources */,
+				895EE23229E542A600C366FB /* Constants.swift in Sources */,
 				0BBD168B29E0400600E11563 /* OpenConnect.xcdatamodeld in Sources */,
 				895EE22729E510A400C366FB /* ContactViewModel.swift in Sources */,
 				0BBD168829E0400600E11563 /* Persistence.swift in Sources */,
+				895EE23029E51EB200C366FB /* ContactDetailView.swift in Sources */,
+				895EE22E29E5197800C366FB /* ContactView.swift in Sources */,
 				0BBD168129E0400500E11563 /* ContentView.swift in Sources */,
+				895EE22929E5177A00C366FB /* Contact.swift in Sources */,
 				895EE22429E5100E00C366FB /* ContactListViewModel.swift in Sources */,
 				0BBD167F29E0400500E11563 /* OpenConnectApp.swift in Sources */,
 			);
@@ -457,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OpenConnect/Preview Content\"";
-				DEVELOPMENT_TEAM = 3U3LCCCL27;
+				DEVELOPMENT_TEAM = H24AHK7Y29;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -470,7 +498,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.plus.OpenConnect;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sohag.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OpenConnect/Preview Content\"";
-				DEVELOPMENT_TEAM = 3U3LCCCL27;
+				DEVELOPMENT_TEAM = H24AHK7Y29;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -499,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.plus.OpenConnect;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sohag.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
