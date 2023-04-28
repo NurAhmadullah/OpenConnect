@@ -5,16 +5,12 @@
 //  Created by Sohag Macbook Pro on 7/4/23.
 //
 
+
+
+
 import SwiftUI
 import CoreData
 
-var contacts = [
-    Contact(name: "Sohag", description: "iOS developer", phone: "0123456789"),
-    Contact(name: "Zahid", description: "iOS developer", phone: "0123456789"),
-    Contact(name: "Dev3", description: "android developer", phone: "0123456789"),
-    Contact(name: "Dev4", description: "PHP developer", phone: "0123456789"),
-    Contact(name: "Dev5", description: "java developer", phone: "0123456789"),
-]
 
 struct ContentView: View {
     /*
@@ -25,14 +21,43 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     */
+    @ObservedObject var viewModel = ContactListViewModel()
     var body: some View {
         NavigationView {
-            List(contacts,id:\.name){ contact in
-                NavigationLink(destination: ContactDetailView(contact: contact)){
-                    ContactView(contact: contact)
+            List{
+                ForEach(viewModel.contacts,id:\.name){ contact in
+                    NavigationLink(destination: ContactDetailView(contact: contact, viewModel: viewModel)){
+                        ContactRowView(contact: contact)
+                    }
                 }
+                .onDelete(perform: viewModel.deleteContactIndexSet)
             }
-            .navigationBarTitle(Text("Contacts"))
+            .navigationBarTitle(Text("Open Connect"))
+            .navigationBarItems(trailing:
+                                    
+                                    NavigationLink {
+                                        AddContactView(viewModel: viewModel)
+                                    } label: {
+                                        Image(systemName: "plus")
+                                    }
+                                    
+                                    /*
+                                    Button(action: {
+                viewModel.addContact()
+            }, label: {
+                Image(systemName: "plus")
+            })
+                                     */
+            )
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                if viewModel.contacts.count > 0{
+                    viewModel.deleteContact(at: viewModel.contacts.count-1)
+                }
+            }, label: {
+                Image(systemName: "minus")
+            })
+            )
         }
     }
 

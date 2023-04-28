@@ -17,12 +17,13 @@
 		0BBD169F29E0400600E11563 /* OpenConnectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD169E29E0400600E11563 /* OpenConnectUITests.swift */; };
 		0BBD16A129E0400600E11563 /* OpenConnectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */; };
 		895EE22429E5100E00C366FB /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22329E5100E00C366FB /* ContactListViewModel.swift */; };
-		895EE22729E510A400C366FB /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22629E510A400C366FB /* ContactViewModel.swift */; };
+		895EE22729E510A400C366FB /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22629E510A400C366FB /* ContactDetailViewModel.swift */; };
 		895EE22929E5177A00C366FB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22829E5177A00C366FB /* Contact.swift */; };
 		895EE22C29E517FF00C366FB /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22B29E517FF00C366FB /* Globals.swift */; };
-		895EE22E29E5197800C366FB /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22D29E5197800C366FB /* ContactView.swift */; };
+		895EE22E29E5197800C366FB /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22D29E5197800C366FB /* ContactRowView.swift */; };
 		895EE23029E51EB200C366FB /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE22F29E51EB200C366FB /* ContactDetailView.swift */; };
 		895EE23229E542A600C366FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895EE23129E542A600C366FB /* Constants.swift */; };
+		89DFFF5E29F799A500409490 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DFFF5D29F799A500409490 /* AddContactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +57,13 @@
 		0BBD169E29E0400600E11563 /* OpenConnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenConnectUITests.swift; sourceTree = "<group>"; };
 		0BBD16A029E0400600E11563 /* OpenConnectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenConnectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		895EE22329E5100E00C366FB /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
-		895EE22629E510A400C366FB /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		895EE22629E510A400C366FB /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 		895EE22829E5177A00C366FB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		895EE22B29E517FF00C366FB /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		895EE22D29E5197800C366FB /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		895EE22D29E5197800C366FB /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
 		895EE22F29E51EB200C366FB /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		895EE23129E542A600C366FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89DFFF5D29F799A500409490 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				895EE22329E5100E00C366FB /* ContactListViewModel.swift */,
-				895EE22629E510A400C366FB /* ContactViewModel.swift */,
+				895EE22629E510A400C366FB /* ContactDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -171,8 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				0BBD168029E0400500E11563 /* ContentView.swift */,
-				895EE22D29E5197800C366FB /* ContactView.swift */,
+				895EE22D29E5197800C366FB /* ContactRowView.swift */,
 				895EE22F29E51EB200C366FB /* ContactDetailView.swift */,
+				89DFFF5D29F799A500409490 /* AddContactView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,10 +322,11 @@
 				895EE22C29E517FF00C366FB /* Globals.swift in Sources */,
 				895EE23229E542A600C366FB /* Constants.swift in Sources */,
 				0BBD168B29E0400600E11563 /* OpenConnect.xcdatamodeld in Sources */,
-				895EE22729E510A400C366FB /* ContactViewModel.swift in Sources */,
+				89DFFF5E29F799A500409490 /* AddContactView.swift in Sources */,
+				895EE22729E510A400C366FB /* ContactDetailViewModel.swift in Sources */,
 				0BBD168829E0400600E11563 /* Persistence.swift in Sources */,
 				895EE23029E51EB200C366FB /* ContactDetailView.swift in Sources */,
-				895EE22E29E5197800C366FB /* ContactView.swift in Sources */,
+				895EE22E29E5197800C366FB /* ContactRowView.swift in Sources */,
 				0BBD168129E0400500E11563 /* ContentView.swift in Sources */,
 				895EE22929E5177A00C366FB /* Contact.swift in Sources */,
 				895EE22429E5100E00C366FB /* ContactListViewModel.swift in Sources */,

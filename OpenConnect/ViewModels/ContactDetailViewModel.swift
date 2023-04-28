@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ContactViewModel{
+struct ContactDetailViewModel{
     
 }

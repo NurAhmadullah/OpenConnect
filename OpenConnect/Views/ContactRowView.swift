@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContactView: View {
+struct ContactRowView: View {
     var contact:Contact
     var body: some View {
         VStack(alignment: .leading){
