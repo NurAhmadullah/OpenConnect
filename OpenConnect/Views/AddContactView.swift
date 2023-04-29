@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddContactView: View {
-    var viewModel:ContactListViewModel
+    @EnvironmentObject var viewModel:ContactListViewModel
     
     @State var editContact:Contact?
     
@@ -44,9 +44,10 @@ struct AddContactView: View {
                         }
                         else {
                             viewModel.addContactWith(name: name, phone: phoneNumber, description: description)
+                            dismiss()
                         }
                         
-                        dismiss()
+                        
                     } label: {
                         Text("Save Contact")
                     }
@@ -62,9 +63,10 @@ struct AddContactView: View {
     }
 }
 
-struct AddContactView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddContactView(viewModel: ContactListViewModel())
-    }
-}
+//struct AddContactView_Previews: PreviewProvider {
+//    @State var demoContact = Contact(name: "", description: "", phone: "")
+//    static var previews: some View {
+//        AddContactView(viewModel: ContactListViewModel())
+//    }
+//}
 

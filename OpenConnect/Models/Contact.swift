@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct Contact{
-    var name:String
-    var description:String
-    var phone:String
+class Contact:ObservableObject{
+    @Published var name:String
+    @Published var description:String
+    @Published var phone:String
+    init(name: String, description: String, phone: String) {
+        self.name = name
+        self.description = description
+        self.phone = phone
+    }
 }

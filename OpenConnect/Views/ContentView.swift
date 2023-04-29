@@ -21,12 +21,12 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     */
-    @ObservedObject var viewModel = ContactListViewModel()
+    @EnvironmentObject var viewModel : ContactListViewModel
     var body: some View {
         NavigationView {
             List{
                 ForEach(viewModel.contacts,id:\.name){ contact in
-                    NavigationLink(destination: ContactDetailView(contact: contact, viewModel: viewModel)){
+                    NavigationLink(destination: ContactDetailView(contact: contact)){
                         ContactRowView(contact: contact)
                     }
                 }
@@ -34,20 +34,11 @@ struct ContentView: View {
             }
             .navigationBarTitle(Text("Open Connect"))
             .navigationBarItems(trailing:
-                                    
                                     NavigationLink {
-                                        AddContactView(viewModel: viewModel)
-                                    } label: {
-                                        Image(systemName: "plus")
-                                    }
-                                    
-                                    /*
-                                    Button(action: {
-                viewModel.addContact()
-            }, label: {
+                AddContactView()
+            } label: {
                 Image(systemName: "plus")
-            })
-                                     */
+            }
             )
             .navigationBarItems(trailing:
                                     Button(action: {
@@ -100,6 +91,8 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(ContactListViewModel())
     }
 }

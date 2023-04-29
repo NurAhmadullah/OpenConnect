@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContactDetailView: View {
     var contact:Contact
-    var viewModel:ContactListViewModel
+    @EnvironmentObject var viewModel:ContactListViewModel
     var body: some View {
             GeometryReader{ geo in
                 VStack(alignment: .leading){
@@ -60,7 +60,7 @@ struct ContactDetailView: View {
             .navigationBarItems(trailing:
                                     
                                     NavigationLink {
-                AddContactView(viewModel: viewModel,editContact: contact)
+                AddContactView(editContact: contact)
             } label: {
                 Text("Edit")
             }
@@ -103,7 +103,7 @@ struct HorizontalButtonView:View{
 
 struct ContentView_Previews2: PreviewProvider {
     static var previews: some View {
-        ContactDetailView(contact: Contact(name: "Name", description: "Job title", phone: "012345"),viewModel: ContactListViewModel())
+        ContactDetailView(contact: Contact(name: "Name", description: "Job title", phone: "012345"))
     }
 }
 
