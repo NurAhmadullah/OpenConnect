@@ -10,7 +10,7 @@ import SwiftUI
 struct AddContactView: View {
     @EnvironmentObject var viewModel:ContactListViewModel
     
-    @State var editContact:Contact?
+    var contactId:String?
     
     @Environment(\.dismiss) private var dismiss
     @State var name:String = ""
@@ -36,17 +36,16 @@ struct AddContactView: View {
                     Spacer()
                         .frame(height: 50)
                     Button {
-                        //viewModel.addContact()
-                        if editContact != nil {
-                            editContact?.name = name
-                            editContact?.phone = phoneNumber
-                            editContact?.description = description
+
+                        if let contactId = contactId, let editContact = viewModel.contacts.first(where: {$0.id == contactId}) {
+                            editContact.name = name
+                            editContact.phone = phoneNumber
+                            editContact.description = description
                         }
                         else {
-                            viewModel.addContactWith(name: name, phone: phoneNumber, description: description)
-                            dismiss()
+                            viewModel.addContactWith(name: name, phone: phoneNumber, description: description, id: UUID().uuidString)
                         }
-                        
+                        dismiss()
                         
                     } label: {
                         Text("Save Contact")
@@ -56,9 +55,11 @@ struct AddContactView: View {
                 .padding(20)
             })
             .onAppear {
-                self.name = editContact?.name ?? ""
-                self.phoneNumber = editContact?.phone ?? ""
-                self.description = editContact?.description ?? ""
+                if let contactId = contactId, let editContact = viewModel.contacts.first(where: {$0.id == contactId}) {
+                    self.name = editContact.name
+                    self.phoneNumber = editContact.phone
+                    self.description = editContact.description
+                }
             }
     }
 }

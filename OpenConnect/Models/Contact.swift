@@ -8,12 +8,15 @@
 import Foundation
 
 class Contact:ObservableObject{
+    var id:String
     @Published var name:String
-    @Published var description:String
     @Published var phone:String
-    init(name: String, description: String, phone: String) {
+    @Published var description:String
+
+    init(name: String, description: String, phone: String, id:String) {
         self.name = name
         self.description = description
         self.phone = phone
+        self.id = id
     }
 }
