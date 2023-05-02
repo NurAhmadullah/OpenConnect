@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactDetailView: View {
-    var contact:Contact
+    @ObservedObject var contact:Contact
     @EnvironmentObject var viewModel:ContactListViewModel
     var body: some View {
             GeometryReader{ geo in

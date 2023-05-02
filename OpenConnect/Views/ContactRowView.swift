@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactRowView: View {
-    var contact:Contact
+    @ObservedObject var contact:Contact
     var body: some View {
         VStack(alignment: .leading){
             Text(contact.name).font(.title)

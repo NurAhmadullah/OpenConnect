@@ -96,3 +96,4 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(ContactListViewModel())
     }
 }
+

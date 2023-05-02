@@ -37,10 +37,8 @@ struct AddContactView: View {
                         .frame(height: 50)
                     Button {
 
-                        if let contactId = contactId, let editContact = viewModel.contacts.first(where: {$0.id == contactId}) {
-                            editContact.name = name
-                            editContact.phone = phoneNumber
-                            editContact.description = description
+                        if let contactId = contactId{
+                            viewModel.updateContact(contactId: contactId, name: name, phone: phoneNumber, description: description)
                         }
                         else {
                             viewModel.addContactWith(name: name, phone: phoneNumber, description: description, id: UUID().uuidString)
